@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const employeeSchema = new mongoose.Schema(
   {
@@ -22,6 +23,13 @@ const employeeSchema = new mongoose.Schema(
   { timeStamps: true }
 );
 
-const Employee = mongoose.Model("Employee", employeeSchema);
+employeeSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+const Employee = mongoose.model("Employee", employeeSchema);
 
 module.exports = Employee;

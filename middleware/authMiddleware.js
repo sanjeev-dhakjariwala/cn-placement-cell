@@ -13,6 +13,7 @@ const protect = asyncHandler(async (req, res, next) => {
       token = req?.headers?.authorization.split(" ")[1];
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       req.employee = await Employee.findByID(decoded.id);
+      next()
     } catch (err) {
       console.error(err);
       res.status(401);
@@ -26,5 +27,4 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-module.exports = protect
-
+module.exports = protect;
