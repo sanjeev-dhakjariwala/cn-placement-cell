@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/signUp.css" />
+<nav class="navbar">
+  <div class="nav-items">
+    <a class="nav-item" href="/">Sign In</a>
+  </div>
+</nav>
+<section>
+  <h1>Sign Up To Account</h1>
+  <form id="form" action="/create_session" method="POST" class="form-container">
+    <% if(firstNameError != null){ %>
+    <small><%- firstNameError %></small><br />
+    <%}%>
+    <label for="firstname">First Name:</label>
+    <input type="text" id="firstName" name="firstName" class="form-input" />
+    <% if(lastNameError != null){ %>
+    <small><%- lastNameError %></small><br />
+    <%}%>
+    <label for="lastname">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" class="form-input" />
+    <% if(emailError != null){ %>
+    <small><%- emailError %></small><br />
+    <%}%>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" class="form-input" />
+    <% if(passwordError != null){ %>
+    <small><%- passwordError %></small><br />
+    <%}%>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" class="form-input" />
+    <input type="submit" value="Submit" class="form-submit" />
+  </form>
+</section>

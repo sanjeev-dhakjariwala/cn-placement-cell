@@ -1,50 +1,97 @@
-body{
-    background-color: rgb(251,251,251);
+body {
+  background-color: rgb(251, 251, 251);
 }
-nav{
-    position: fixed;
-}
-section{
-    text-align: center;
-    margin: 5%;
-    padding: 50px;
-    width: 50%;
-    margin-left: 25%;
-    background-color: rgb(255,255,255);
-    display:inline-block;
+/* Styles for the form container */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
-input{
-    width: 60%;
-    padding: 5px;
-    margin: 10px;
-    font-size: 20px;
-    border: 2px solid lightgrey;
-}
-i{
-    position: absolute;
-    margin-top: 20px;
-    margin-left: -2.5%;
-    visibility: hidden;
-}
-small{
-    color: red;
-    font-size: 16px;
+/* Styles for the form inputs */
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
 }
 
-input:focus { 
-    outline: none ;
-    border: 1px solid cyan;
-    box-shadow: 5px lightblue;
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Add this line to include padding and border in width and height calculations */
+}
 
+.form-container input[type="submit"] {
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
-button{
-    width: 20%;
-    height:50%;
-    font-size: 20px;
-    padding: 5px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 8px;
+
+.form-container input[type="submit"]:hover {
+  background-color: #005ae6;
 }
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .form-container {
+    max-width: 400px;
+  }
+}
+
+nav {
+  position: fixed;
+}
+section {
+  text-align: center;
+  margin: 5%;
+  padding: 50px;
+  width: 50%;
+  margin-left: 25%;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+}
+
+/* input {
+  width: 60%;
+  padding: 5px;
+  margin: 10px;
+  font-size: 20px;
+  border: 2px solid lightgrey;
+} */
+i {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: -2.5%;
+  visibility: hidden;
+}
+small {
+  color: red;
+  font-size: 16px;
+}
+
+/* input:focus {
+  outline: none;
+  border: 1px solid cyan;
+  box-shadow: 5px lightblue;
+}
+button {
+  width: 20%;
+  height: 50%;
+  font-size: 20px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+} */
