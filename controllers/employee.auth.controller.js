@@ -33,5 +33,18 @@ const registerEmployee = asyncHandler(async (req, res) => {
     });
   }
 });
-
-module.exports = { registerEmployee };
+const signIn = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const employee = await Employee.findOne({ email });
+    if (employee && (await employee.matchPassword(password))) {
+      res.cookie("employee", employee, {
+        httpOnly: true, // make the cookie accessible only to the server
+      });
+      res.redirect("/employee/dashboard");
+    }
+  } catch (error) {
+    return res.send("<h1>Error in SignIn</h1>");
+  }
+};
+module.exports = { registerEmployee, signIn };
