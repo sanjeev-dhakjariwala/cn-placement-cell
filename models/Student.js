@@ -45,6 +45,6 @@ const studentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Student = mongoose.Model("Student", studentSchema);
+const Student = mongoose.model("Student", studentSchema);
 
 module.exports = Student;

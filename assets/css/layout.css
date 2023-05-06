@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+
 .navbar {
   background-color: #0077ff;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -37,4 +38,37 @@ body {
 .nav-item:hover {
   text-decoration: underline;
   text-decoration-color: #ff6600;
+}
+
+nav {
+  background-color: blue;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #f44336;
 }
