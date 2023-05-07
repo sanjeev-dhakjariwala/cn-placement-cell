@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//Defining Student Schema
 const studentSchema = new mongoose.Schema(
   {
     batch: {
@@ -35,7 +36,7 @@ const studentSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    interview: [
+    interviews: [
       {
         type: mongoose.Types.ObjectId,
         ref: "Interview",
@@ -45,6 +46,7 @@ const studentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+//Defining Student Model
 const Student = mongoose.model("Student", studentSchema);
 
 module.exports = Student;

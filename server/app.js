@@ -12,11 +12,15 @@ const employeeAuthRouter = require("../routes/employee.auth.route");
 const homePageRouter = require("../routes/home.route");
 const employeeRouter = require("../routes/employee.dashboard.route");
 
+//Using express.json() to take JSON as input in request body
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
+//Applying CORS Policy
 app.use(cors());
+//Using cookie parser to store token that we get when we signup and login
 app.use(cookieParser());
 
+//Applying the static assests
 app.use(express.static("./assets"));
 app.use(
   session({
@@ -33,10 +37,11 @@ app.use(
     }),
   })
 );
-
+//Setting view engine as EJS
 app.set("view engine", "ejs");
 app.set("views", "./views");
 app.use(expressLayout);
+//Using flash to display info
 app.use(flash());
 app.use(function (req, res, next) {
   res.locals.flash = {
@@ -45,11 +50,12 @@ app.use(function (req, res, next) {
   };
   next();
 });
-
+//Adding the neccessary routes
 app.use("/api/register", employeeAuthRouter);
 app.use("/employee", employeeRouter);
 app.use("/", homePageRouter);
 
+//Adding error middlewares
 app.use(notFound);
 app.use(errorHandler);
 

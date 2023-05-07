@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+//Defining Employee Schema
 const employeeSchema = new mongoose.Schema(
   {
     firstName: {
@@ -39,6 +40,7 @@ employeeSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+//Defining Employee Model
 const Employee = mongoose.model("Employee", employeeSchema);
 
 module.exports = Employee;

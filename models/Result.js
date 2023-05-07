@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//Defining Result Schema
 const resultSchema = new mongoose.Schema({
   result: {
     type: String,
@@ -16,6 +17,7 @@ const resultSchema = new mongoose.Schema({
   },
 });
 
+//Defining Result Model
 const Result = mongoose.model("Result", resultSchema);
 
 module.exports = Result;

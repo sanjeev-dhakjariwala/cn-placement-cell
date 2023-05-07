@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//Defining Interview Schema
 const interviewSchema = new mongoose.Schema(
   {
     companyName: {
@@ -27,7 +28,7 @@ const interviewSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+//Defining Interview Model
 const Interview = mongoose.model("Interview", interviewSchema);
 
 module.exports = Interview;
