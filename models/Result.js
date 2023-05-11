@@ -5,7 +5,7 @@ const resultSchema = new mongoose.Schema({
   result: {
     type: String,
     enum: ["Pass", "Fail", "On Hold", "Did not attempt"],
-    default: "ON HOLD",
+    default: "On Hold",
   },
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
